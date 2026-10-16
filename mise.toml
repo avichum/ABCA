@@ -1,0 +1,18 @@
+[tools]
+node = "24"
+
+[tasks.install]
+description = "Install npm dependencies"
+run = "npm install"
+
+[tasks.dev]
+description = "Start the Vite dev server"
+run = "npm run dev"
+
+[tasks.build]
+description = "Build the production bundle into dist/"
+run = "npm run build"
+
+[tasks.lint]
+description = "Lint the source with ESLint"
+run = "npm run lint"
