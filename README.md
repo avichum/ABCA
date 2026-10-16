@@ -1,19 +1,37 @@
 # ABCA
 
-A minimal static "Hello World" website.
+A minimal React "Hello World" website, built with [Vite](https://vite.dev/).
 
 ## Files
 
-- `index.html` — the page
-- `style.css` — styling (responsive, light/dark aware)
+- `index.html` — HTML entry point (mounts the React app into `#root`)
+- `src/main.jsx` — React entry point
+- `src/App.jsx` — the `App` component that renders the page
+- `src/index.css` — styling (responsive, light/dark aware)
+- `vite.config.js` — Vite + React plugin configuration
+- `eslint.config.js` — ESLint configuration
 
-## Viewing it
+## Getting started
 
-Open `index.html` directly in a browser, or serve the directory:
+Requires Node.js 20+ (Node 24 is pinned in `mise.toml`).
 
 ```sh
-python3 -m http.server 8000
-# then visit http://localhost:8000
+npm install
+npm run dev
+# then visit the URL printed by Vite (http://localhost:5173 by default)
 ```
 
-There is no build step and no external dependencies.
+## Scripts
+
+| Command           | What it does                                   |
+| ----------------- | ---------------------------------------------- |
+| `npm run dev`     | Start the dev server with hot module reloading |
+| `npm run build`   | Build the production bundle into `dist/`       |
+| `npm run preview` | Serve the production build locally             |
+| `npm run lint`    | Lint the source with ESLint                    |
+
+The equivalent [mise](https://mise.jdx.dev/) tasks are also available:
+`mise run install`, `mise run dev`, `mise run build`, `mise run lint`.
+
+`npm run build` emits a static bundle in `dist/` that can be served by any
+static host.
